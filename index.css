@@ -1,5 +1,6 @@
 :root {
   --primary-color: #fa7436;
+  --bg-color: #F7F8FC;
 }
 
 html,
@@ -19,18 +20,6 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-.poppins-thin {
-  font-family: "Poppins", serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
 .poppins-light {
   font-family: "Poppins", serif;
   font-weight: 300;
@@ -62,89 +51,12 @@ body {
   font-style: normal;
 }
 
-.poppins-extrabold {
-  font-family: "Poppins", serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
 .volkhov-bold {
   font-family: "Volkhov", serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.volkhov-regular-italic {
-  font-family: "Volkhov", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.volkhov-bold-italic {
-  font-family: "Volkhov", serif;
-  font-weight: 700;
-  font-style: italic;
-}
 .flex {
   display: flex;
   justify-content: center;
@@ -227,6 +139,7 @@ body {
   margin-top: 50px;
   background-color: #ffff;
   border-radius: 5px;
+  padding: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   > p {
     padding: 30px;
@@ -251,8 +164,10 @@ body {
 
  
  .card-section{
-  justify-content: space-evenly!important;
- }
+ display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; }
 .card-1{
   margin-top: 50px;
   padding: 20px;
@@ -317,29 +232,55 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.feedback{
-  >.text-content{
-    >h1{
-      text-align: left;
-    }
-  }
-  >.left-container{
-    width:50%;
-  }
-  >.right-container{
-    width: 50%;
-  }
+#People {
+  background-color: var(--bg-color);
+  padding: 50px 100px;
 }
-.feedback-card{
-  margin-left: 55px;
-  margin-top: 200px;
-  width: 400px;
-  height: 200px;
- padding: 25px;
- background-color: #ffff;
-  border-radius: 12px;
+
+.feedback {
+  display: flex;
+  justify-content: space-between; /* Space out the left and right containers */
+  align-items: center; /* Vertically align content */
+  gap: 50px;
+}
+
+.text-content.left-container {
+  width: 50%; /* Left content takes 50% of the width */
+  text-align: left;
+}
+
+.text-content.left-container h1 {
+  font-size: 36px;
+  text-align: left;
+}
+
+.feedback-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.feedback-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.feedback-card p.poppins-semibold {
+  font-weight: 600;
+}
+
+.feedback-card p.poppins-light {
+  font-weight: 300;
+  font-size: 14px;
+}
+.right-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 50%; 
+}
+
 .subscribe {
   width: 900px;
   height: 300px;
@@ -348,9 +289,9 @@ body {
   margin-top: 75px;
     display: flex;
   flex-direction: column;
-  justify-content: center;  /* Vertically center */
-  align-items: center;      /* Horizontally center */
-  text-align: center;       /* Center the text */
+  justify-content: center;  
+  align-items: center;    
+  text-align: center;   
 }
 .input {
   width: 500px;
@@ -373,6 +314,11 @@ body {
 }
 .right-list{
   width: 60%;
+  gap: 50px;
+
+  >ul{
+    list-style: none;
+0  }
 }
 .social-icon {
   height: 70px;
@@ -387,4 +333,17 @@ body {
 
 .social-icon i {
   font-size: 1.5em; 
+}
+@media (max-width: 768px) {
+  .menu, .nav-bar, .login-bar {
+    width: 100%;
+    justify-content: center;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .image-container {
+    width: 100%;
+    margin-left: 0;
+  }
 }
